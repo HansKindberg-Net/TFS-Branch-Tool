@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/almrangers/2012/ActionPlan" xmlns:ap="http://schemas.microsoft.com/almrangers/2012/ActionPlan" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ActionPlan" type="ap:ActionPlan" nillable="false" />
+  <xs:complexType name="ActionPlan">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string" nillable="true" default="" />
+      <xs:element minOccurs="1" maxOccurs="1" name="properties" type="ap:ArrayOfPropertyInfo" />
+      <xs:element minOccurs="1" maxOccurs="1" name="actions" type="ap:ArrayOfActionInfo" />
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required" />
+    <xs:attribute name="helpUri" type="xs:anyURI" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfActionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="action" type="ap:ActionInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ActionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="input" type="ap:ArrayOfPropertyInfo" />
+      <xs:element minOccurs="0" maxOccurs="1" name="output" type="ap:ArrayOfPropertyInfo" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required" />
+    <xs:attribute name="name" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfPropertyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="property" nillable="true" type="ap:PropertyInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PropertyInfo">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="optional" type="xs:boolean" use="optional" default="false" />
+        <xs:attribute name="description" type="xs:string" use="optional" default="" />
+        <xs:attribute name="TypeInformation" type="xs:string" use="optional" />
+        <xs:attribute name="Validate" type="xs:boolean" use="optional" />
+        <xs:attribute name="ExpectedValue" type="xs:string" use="optional" />
+        <xs:attribute name="ValidationMessage" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

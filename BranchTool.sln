@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActionExecutionEngine", "ActionExecutionEngine\ActionExecutionEngine.csproj", "{687C48CE-4698-4FAF-B6E0-61084EE9B351}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActionExecutionEngine.Tests", "ActionExecutionEngine.Tests\ActionExecutionEngine.Tests.csproj", "{400727D2-AFE9-4650-9DAC-63F31D105F80}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F1465D9F-F6D2-459B-884D-53C7A323603E}"
+	ProjectSection(SolutionItems) = preProject
+		AutomatedBuild.testsettings = AutomatedBuild.testsettings
+		BranchTool.sln.DotSettings = BranchTool.sln.DotSettings
+		IntegrationTests.testsettings = IntegrationTests.testsettings
+		README.md = README.md
+		Settings.StyleCop = Settings.StyleCop
+		UnitTests.testsettings = UnitTests.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TfsBranchToolCmdLine", "CmdLineParser\TfsBranchToolCmdLine.csproj", "{13B4FC3E-BFF3-4242-9961-F266F5B4A604}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TfsBranchToolCmdLine.Tests", "TfsBranchToolCmdLine.Tests\TfsBranchToolCmdLine.Tests.csproj", "{65A9BF92-B47F-4844-899B-BC74C6B0C19C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceControlWrapper", "SourceControlWrapper\SourceControlWrapper.csproj", "{42A5CFC1-6904-4767-807F-B47DCA669568}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceControlWrapper.Tests", "SourceControlWrapper.Tests\SourceControlWrapper.Tests.csproj", "{001A356A-93AB-4757-A4A4-0B4A9293F6E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TfsBranchToolVSExtension", "TfsBranchToolVSExtension\TfsBranchToolVSExtension.csproj", "{63817546-D392-4E3E-B485-520FE334623C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TfsBranchToolVSExtension_UnitTests", "TfsBranchToolVSExtension\TfsBranchToolVSExtension_UnitTests\TfsBranchToolVSExtension_UnitTests.csproj", "{43E528C4-550A-452B-9796-BEA0EB7A4A25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{687C48CE-4698-4FAF-B6E0-61084EE9B351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{687C48CE-4698-4FAF-B6E0-61084EE9B351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{687C48CE-4698-4FAF-B6E0-61084EE9B351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{687C48CE-4698-4FAF-B6E0-61084EE9B351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{400727D2-AFE9-4650-9DAC-63F31D105F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{400727D2-AFE9-4650-9DAC-63F31D105F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{400727D2-AFE9-4650-9DAC-63F31D105F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{400727D2-AFE9-4650-9DAC-63F31D105F80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13B4FC3E-BFF3-4242-9961-F266F5B4A604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13B4FC3E-BFF3-4242-9961-F266F5B4A604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13B4FC3E-BFF3-4242-9961-F266F5B4A604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13B4FC3E-BFF3-4242-9961-F266F5B4A604}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65A9BF92-B47F-4844-899B-BC74C6B0C19C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65A9BF92-B47F-4844-899B-BC74C6B0C19C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65A9BF92-B47F-4844-899B-BC74C6B0C19C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65A9BF92-B47F-4844-899B-BC74C6B0C19C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42A5CFC1-6904-4767-807F-B47DCA669568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42A5CFC1-6904-4767-807F-B47DCA669568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42A5CFC1-6904-4767-807F-B47DCA669568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42A5CFC1-6904-4767-807F-B47DCA669568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{001A356A-93AB-4757-A4A4-0B4A9293F6E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{001A356A-93AB-4757-A4A4-0B4A9293F6E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{001A356A-93AB-4757-A4A4-0B4A9293F6E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{001A356A-93AB-4757-A4A4-0B4A9293F6E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63817546-D392-4E3E-B485-520FE334623C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63817546-D392-4E3E-B485-520FE334623C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63817546-D392-4E3E-B485-520FE334623C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63817546-D392-4E3E-B485-520FE334623C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43E528C4-550A-452B-9796-BEA0EB7A4A25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43E528C4-550A-452B-9796-BEA0EB7A4A25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43E528C4-550A-452B-9796-BEA0EB7A4A25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43E528C4-550A-452B-9796-BEA0EB7A4A25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

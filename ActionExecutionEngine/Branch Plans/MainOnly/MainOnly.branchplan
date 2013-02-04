@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" standalone="yes"?>
+
+<ActionPlan name="MainOnly" helpUri="mainonly.html" xmlns="http://schemas.microsoft.com/almrangers/2012/ActionPlan">
+  <description>Branch plan that implements "Main only" scenario.</description>
+  <properties>
+    <property name="ProjectCollectionUrl" description="The complete URL of the TFS Server, example http://tfsserver:port/tfs/DefaultCollection" />
+    <property name="RootFolder" description="The Root Folder where to put the branch structure. Format $/TeamProject/Folder" optional="false">$/$(ActionPlan.TeamProject)</property>
+  </properties>
+  <actions>
+    <action id="ConnectSourceControl" name="SccConnect">
+      <input>
+        <property name="Collection">$(ActionPlan.ProjectCollectionUrl)</property>
+        <property name="Path">$(ActionPlan.RootFolder)</property>
+      </input>
+      <output>
+        <property name="SourceControl" />
+        <property name="TeamProject" />
+      </output>
+    </action>
+    <action id="ValidateRootFolderDoesntHaveMain" name="SccFolderExist">
+      <input>
+        <property name="FolderPath">$(ActionPlan.RootFolder)/main</property>
+        <property name="SourceControl">$(ConnectSourceControl.SourceControl)</property>
+      </input>
+      <output>
+        <property name="Result" Validate="true" ExpectedValue="false" ValidationMessage="The main folder $(ActionPlan.RootFolder)/main already exist"/>
+      </output>
+    </action>
+    <action id="MainBranch" name="SccCreateFolder">
+      <input>
+        <property name="FolderPath">$(ActionPlan.RootFolder)/main</property>
+        <property name="SourceControl">$(ConnectSourceControl.SourceControl)</property>
+        <property name="OnlyCreateLastFolderInPath">false</property>
+      </input>
+    </action>
+    <action id="Check-inMain" name="SccCheckIn">
+      <input>
+        <property name="SourceControl">$(ConnectSourceControl.SourceControl)</property>
+        <property name="CheckinComment">Creating main folder</property>
+      </input>
+    </action>
+  </actions>
+</ActionPlan>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<ActionPlan name="fake" xmlns="http://schemas.microsoft.com/almrangers/2012/ActionPlan">
+  <properties>
+    <property name="ProjectCollectionUrl" optional="false" />
+    <property name="RootFolder" optional="false" />
+    <property name="DevBranchName" optional="true">MyDevBranch</property>
+    <property name="Booltest" optional="true">True</property>
+  </properties>
+  <actions>
+    <action id="FirstAction" name="FakeAction">
+      <input>
+        <property name="PropertyNoGetter">$(ActionPlan.RootFolder)/Main</property>
+      </input>
+      <output>
+        <property name="PropertyNoSetter" />
+      </output>
+    </action>
+    <action id="SecondAction" name="FakeAction">
+      <input>
+        <property name="PropertyNoGetter">$(ActionPlan.RootFolder)/$(FirstAction.PropertyNoSetter)</property>
+      </input>
+      <output>
+        <property name="PropertyNoSetter" />
+      </output>
+    </action>
+    <action id="ThirdAction" name="FakeAction">
+      <input>
+        <property name="PropertyNoGetter">$(SecondAction.PropertyNoSetter)</property>
+      </input>
+      <output>
+        <property name="PropertyNoSetter" />
+      </output>
+    </action>
+  </actions>
+</ActionPlan>

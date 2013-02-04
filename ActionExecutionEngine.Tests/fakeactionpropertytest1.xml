@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+
+<ActionPlan name="fake1" xmlns="http://schemas.microsoft.com/almrangers/2012/ActionPlan" >
+  <description>This is fake action plan.</description>
+  <properties>
+    <property name="RootFolder" />
+    <property name="DevBranchName" optional="false" />
+  </properties>
+  <actions>
+    <action id="FirstAction" name="FakeAction">
+      <input>
+        <property name="PropertyNoSetter">$(ActionPlan.RootFolder)/Main</property>
+      </input>
+    </action>
+  </actions>
+</ActionPlan>

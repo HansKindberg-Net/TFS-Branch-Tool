@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" standalone="yes"?>
+
+<ActionPlan name="wrong2" xmlns="http://schemas.microsoft.com/almrangers/2012/ActionPlan">
+  <properties>
+    <property name="RootFolder" />
+    <property name="DevBranchName" optional="true" />
+  </properties>
+  <actions>
+    <action id="MainBranch" name="SccCreateFolder">
+      <input>
+        <property name="FolderPath">$(ActionPlan.RootFolder)/Main</property>
+      </input>
+    </action>
+    <action id="DevBranch" name="SccCreateBranch">
+      <input>
+        <property name="BranchSource">$(MainBranch.MainBranchPath)</property>
+        <property name="BranchTarget">$(ActionPlan.RootFolder)/$(ActionPlan.DevBranchName)</property>
+      </input>
+      <output>
+        <property name="BranchPath" />
+      </output>
+    </action>
+    <action id="Check-in" name="SccCheckIn">
+    </action>
+  </actions>
+</ActionPlan>

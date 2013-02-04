@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestSettings name="AutomatedBuild" id="7ebd2d04-02d9-4e3e-b8f9-9444872c4314" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Description>These are default test settings for a local test run.</Description>
+  <Deployment>
+    <DeploymentItem filename="ActionExecutionEngine\Branch Plans\" />
+  </Deployment>
+  <Execution>
+    <TestTypeSpecific>
+      <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+        <AssemblyResolution>
+          <TestDirectory useLoadContext="true" />
+        </AssemblyResolution>
+      </UnitTestRunConfig>
+      <WebTestRunConfiguration testTypeId="4e7599fa-5ecb-43e9-a887-cd63cf72d207">
+        <Browser name="Internet Explorer 9.0" MaxConnections="6">
+          <Headers>
+            <Header name="User-Agent" value="Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)" />
+            <Header name="Accept" value="*/*" />
+            <Header name="Accept-Language" value="{{$IEAcceptLanguage}}" />
+            <Header name="Accept-Encoding" value="GZIP" />
+          </Headers>
+        </Browser>
+      </WebTestRunConfiguration>
+    </TestTypeSpecific>
+    <AgentRule name="LocalMachineDefaultRole">
+      <DataCollectors>
+        <DataCollector uri="datacollector://microsoft/CodeCoverage/1.0" assemblyQualifiedName="Microsoft.VisualStudio.TestTools.CodeCoverage.CoveragePlugIn, Microsoft.VisualStudio.QualityTools.Plugins.CodeCoverage, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" friendlyName="Code Coverage (Visual Studio 2010)">
+          <Configuration>
+            <CodeCoverage xmlns="">
+              <Regular>
+                <CodeCoverageItem binaryFile="ActionExecutionEngine\bin\Debug\Microsoft.ALMRangers.BranchTool.ActionExecutionEngine.dll" pdbFile="ActionExecutionEngine\bin\Debug\Microsoft.ALMRangers.BranchTool.ActionExecutionEngine.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="SourceControlWrapper\bin\Debug\Microsoft.ALMRangers.BranchTool.SourceControlWrapper.dll" pdbFile="SourceControlWrapper\bin\Debug\Microsoft.ALMRangers.BranchTool.SourceControlWrapper.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="CmdLineParser\bin\Debug\TfsBranchTool.exe" pdbFile="CmdLineParser\bin\Debug\TfsBranchTool.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="TfsBranchToolVSExtension\bin\Debug\TfsBranchToolVSExtension.dll" pdbFile="TfsBranchToolVSExtension\bin\Debug\TfsBranchToolVSExtension.pdb" instrumentInPlace="true" />
+              </Regular>
+            </CodeCoverage>
+          </Configuration>
+        </DataCollector>
+      </DataCollectors>
+    </AgentRule>
+  </Execution>
+</TestSettings>
