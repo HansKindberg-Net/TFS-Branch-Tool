@@ -32,6 +32,12 @@
 				<property name="OnlyCreateLastFolderInPath">false</property>
 			</input>
 		</action>
+		<action id="Check-in-MainBranch" name="SccCheckIn">
+			<input>
+				<property name="SourceControl">$(ConnectSourceControl.SourceControl)</property>
+				<property name="CheckinComment">Created main branch</property>
+			</input>
+		</action>
 		<action id="DevelopmentMainBranch" name="SccCreateBranch">
 			<input>
 				<property name="BranchSource">$(ActionPlan.RootFolder)/Main</property>
@@ -41,6 +47,12 @@
 			<output>
 				<property name="BranchPath" />
 			</output>
+		</action>
+		<action id="Check-in-DevelopmentMainBranch" name="SccCheckIn">
+			<input>
+				<property name="SourceControl">$(ConnectSourceControl.SourceControl)</property>
+				<property name="CheckinComment">Branched main to development-main</property>
+			</input>
 		</action>
 		<action id="ReleasesContainer" name="SccCreateFolder">
 			<input>
