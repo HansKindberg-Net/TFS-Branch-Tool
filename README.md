@@ -6,4 +6,4 @@ Requirements
 ------------
 Requirements to open/build the solution:
 * **Visual Studio Ultimate 2012** (fakes are used)
-* **Microsoft Visual Studio 2012 SDK** (*TOOLS -> Extensions and Updates...* and search for "Microsoft Visual Studio 2012 SDK")
+* **Microsoft Visual Studio 2012 SDK** (TOOLS -> Extensions and Updates... and search for "Microsoft Visual Studio 2012 SDK")
