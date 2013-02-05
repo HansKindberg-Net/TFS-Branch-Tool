@@ -82,6 +82,16 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Branch Plans\Basic-Structure-Only\Basic-Structure-Only.branchplan">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Branch Plans\Basic-Structure-Only\Basic-Structure-Only.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Branch Plans\Basic-Structure-Only\Basic-Structure-Only.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="key.snk" />
   </ItemGroup>
   <ItemGroup>
@@ -96,7 +106,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Branch Plans\Basic\basic.branchplan">
+    <Content Include="Branch Plans\Basic\Basic.branchplan">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

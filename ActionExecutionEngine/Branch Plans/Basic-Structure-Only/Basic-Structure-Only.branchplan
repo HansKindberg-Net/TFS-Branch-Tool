@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" standalone="yes"?>
-<ActionPlan name="Basic" helpUri="Basic.html" xmlns="http://schemas.microsoft.com/almrangers/2012/ActionPlan">
-	<description>Basic branch plan.</description>
+<ActionPlan name="Basic-Structure-Only" helpUri="Basic-Structure-Only.html" xmlns="http://schemas.microsoft.com/almrangers/2012/ActionPlan">
+	<description>Basic branch plan - structure only.</description>
 	<properties>
 		<property name="ProjectCollectionUrl"  description="The complete URL of the TFS Server, example http://tfsserver:port/tfs/DefaultCollection"/>
 		<property name="RootFolder" description="The Root Folder where to put the branch structure. Format $/TeamProject/Folder" optional="false">$/$(ActionPlan.TeamProject)</property>
@@ -25,6 +25,12 @@
 				<property name="Result" Validate="true" ExpectedValue="false" ValidationMessage="The folder $(ActionPlan.RootFolder)/Main already exist"/>
 			</output>
 		</action>
+		<action id="DevelopmentContainer" name="SccCreateFolder">
+			<input>
+				<property name="FolderPath">$(ActionPlan.RootFolder)/Development</property>
+				<property name="SourceControl">$(ConnectSourceControl.SourceControl)</property>
+			</input>
+		</action>
 		<action id="MainBranch" name="SccCreateFolder">
 			<input>
 				<property name="FolderPath">$(ActionPlan.RootFolder)/Main</property>
@@ -32,31 +38,21 @@
 				<property name="OnlyCreateLastFolderInPath">false</property>
 			</input>
 		</action>
-		<action id="DevelopmentMainBranch" name="SccCreateBranch">
-			<input>
-				<property name="BranchSource">$(ActionPlan.RootFolder)/Main</property>
-				<property name="BranchTarget">$(ActionPlan.RootFolder)/Development/Development-main</property>
-				<property name="SourceControl">$(ConnectSourceControl.SourceControl)</property>
-			</input>
-			<output>
-				<property name="BranchPath" />
-			</output>
-		</action>
-		<action id="ReleasesContainer" name="SccCreateFolder">
-			<input>
-				<property name="FolderPath">$(ActionPlan.RootFolder)/Releases</property>
-				<property name="SourceControl">$(ConnectSourceControl.SourceControl)</property>
-			</input>
-		</action>
 		<action id="DocumentsFolder" name="SccCreateFolder">
 			<input>
-				<property name="FolderPath">$(ActionPlan.RootFolder)/Development/Development-main/Documents</property>
+				<property name="FolderPath">$(ActionPlan.RootFolder)/Main/Documents</property>
 				<property name="SourceControl">$(ConnectSourceControl.SourceControl)</property>
 			</input>
 		</action>
 		<action id="SourceFolder" name="SccCreateFolder">
 			<input>
-				<property name="FolderPath">$(ActionPlan.RootFolder)/Development/Development-main/Source</property>
+				<property name="FolderPath">$(ActionPlan.RootFolder)/Main/Source</property>
+				<property name="SourceControl">$(ConnectSourceControl.SourceControl)</property>
+			</input>
+		</action>
+		<action id="ReleasesContainer" name="SccCreateFolder">
+			<input>
+				<property name="FolderPath">$(ActionPlan.RootFolder)/Releases</property>
 				<property name="SourceControl">$(ConnectSourceControl.SourceControl)</property>
 			</input>
 		</action>
