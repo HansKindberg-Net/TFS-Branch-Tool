@@ -106,7 +106,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Branch Plans\Basic\Temp-Basic.branchplan">
+    <Content Include="Branch Plans\Basic\Basic.branchplan">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
