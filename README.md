@@ -11,4 +11,6 @@ Requirements
 ------------
 Requirements to open/build the solution:
 * **Visual Studio Ultimate 2012** (fakes are used)
-* **Microsoft Visual Studio 2012 SDK** (TOOLS -> Extensions and Updates... and search for "Microsoft Visual Studio 2012 SDK")
+* **Microsoft Visual Studio 2012 SDK** (TOOLS -> Extensions and Updates... and search for "Microsoft Visual Studio 2012 SDK
+
+If the tests fail when running them you can try to disable "AutomatedBuild.testsettings" (TEST -> Test Settings -> X:\Y\Z\AutomatedBuild.testsettings).
